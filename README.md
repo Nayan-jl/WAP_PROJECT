@@ -26,8 +26,6 @@ https://docs.api.jikan.moe
 * HTML
 * CSS
 * JavaScript 
-* Fetch API
-
 
 
 ## Concepts Covered
@@ -43,24 +41,3 @@ https://docs.api.jikan.moe
   * find()
 
 
-
-## Project Goals
-
-* Practice working with APIs
-* Build interactive UI
-* Implement search and filtering
-* Improve JavaScript skills
-
-
-
-## Future Improvements
-
-* Add loading spinner
-* Add dark mode
-* Add favorites using localStorage
-* Add pagination
-
-
-## Author
-
-Nayan Jyoti Lekharu
