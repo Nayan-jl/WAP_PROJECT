@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Anime Explorer</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <h1>Anime Explorer</h1>
+  <h2>Anime Explorer</h2>
 
-  <button onclick="getAnime()">Load Anime</button>
+  <br><br>
+  <input type="text" id="search" placeholder="Search anime" oninput="searchAnime()">
+
+  <br><br>
+  <button onclick="filterAnime()">Top Rated ( > 7 )</button>
+  <button onclick="sortAnime()">Sort by Rating</button>
 
   <div id="container"></div>
 
