@@ -10,11 +10,10 @@ async function getAnime() {
     data = result.data;
     showData(data);
   } catch (err) {
-    container.innerHTML = "Error";
+    container.innerHTML = "Error loading data";
     console.log(err);
   }
 }
-
 function showData(list) {
   const container = document.getElementById("container");
   container.innerHTML = "";
@@ -22,16 +21,17 @@ function showData(list) {
   list.forEach(function(anime) {
     let div = document.createElement("div");
 
+    div.classList.add("card");
+    let scoreText = anime.score ? anime.score : "N/A";
     div.innerHTML = `
       <h3>${anime.title}</h3>
-      <img src="${anime.images.jpg.image_url}" width="150">
-      <p>Score: ${anime.score}</p>
+      <img src="${anime.images.jpg.image_url}">
+      <p>Score: ${scoreText}</p>
     `;
 
     container.appendChild(div);
   });
 }
-
 function searchAnime() {
   let text = document.getElementById("search").value.toLowerCase();
 
@@ -41,23 +41,22 @@ function searchAnime() {
 
   showData(filtered);
 }
-
 function filterAnime() {
   let filtered = data.filter(function(a) {
-    return a.score > 7;
+    return a.score && a.score > 7;
   });
 
   showData(filtered);
 }
-
 function sortAnime() {
   let sorted = data.slice();
 
   sorted.sort(function(a, b) {
-    return b.score - a.score;
+    return (b.score || 0) - (a.score || 0);
   });
 
   showData(sorted);
 }
-
-getAnime();
+window.onload = function() {
+  getAnime();
+};

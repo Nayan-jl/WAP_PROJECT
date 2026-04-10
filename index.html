@@ -3,20 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anime Explorer</title>
+  <title>AniMax</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <h2>Anime Explorer</h2>
-
-  <br><br>
+  <video autoplay muted loop id="bg-video">
+    <source src="270408_medium.mp4" type="video/mp4">
+  </video>
+  <h2>AniMax</h2>
   <input type="text" id="search" placeholder="Search anime" oninput="searchAnime()">
-
-  <br><br>
-  <button onclick="filterAnime()">Top Rated ( > 7 )</button>
+  <br>
+  <br>
+  <button onclick="filterAnime()">Top Rated (>7)</button>
   <button onclick="sortAnime()">Sort by Rating</button>
-
+  <button onclick="getAnime()">Reset</button>
+  <br>
+  <br>
   <div id="container"></div>
 
   <script src="script.js"></script>
